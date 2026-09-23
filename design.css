@@ -7,3 +7,23 @@
 
 /* トップ見出し：本人指定の対象者と講座名 */
 .hero-heading{font-size:clamp(28px,3.25vw,47px);line-height:1.6;letter-spacing:-.055em}.hero-heading>span{display:block;white-space:normal}.hero-heading>span:after{display:none}.hero-heading .audience{font-size:clamp(19px,1.95vw,28px);line-height:1.7;letter-spacing:-.035em;margin-bottom:9px}.hero-heading .course-line{white-space:nowrap}.hero-heading .school-line{display:table;white-space:nowrap}.hero-heading .school-line:after{display:block;height:12px;bottom:6px}@media(max-width:720px){.hero-heading{font-size:clamp(26px,7.8vw,47px);line-height:1.55}.hero-heading .audience{font-size:clamp(18px,4.8vw,25px);margin-bottom:10px}}
+
+/* 初心者向けサポート：既存カリキュラム内で困りごと別に案内 */
+.support-jump{display:inline-flex;align-items:center;gap:14px;font-size:11px;font-weight:bold;border-bottom:1px solid #a8b7a1;margin-top:2px;padding-bottom:2px}
+.support-panel{margin-top:56px;padding-top:39px;border-top:1px solid var(--line)}
+.support-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px}
+.support-heading h2{font-size:30px;margin-top:15px;line-height:1.7}
+.support-heading>p{font-size:12px;line-height:2;margin:0 0 5px}
+.support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.support-card{padding:26px 23px 22px;border:1px solid #ced7c4;border-radius:7px;background:#eef1e5}
+.support-icon{display:grid;place-items:center;width:39px;height:39px;background:var(--lime);border:1px solid #b3c693;border-radius:50%;font:25px Georgia;margin-bottom:21px}
+.support-situation{font-size:10px;color:#53644f}
+.support-card h3{font-size:18px;letter-spacing:-.035em;margin:8px 0 12px;line-height:1.7}
+.support-card p{font-size:12px;line-height:2;margin:0}
+.support-detail{font-size:10px;font-weight:bold;border-top:1px solid #ccd5c0;padding-top:14px;margin-top:20px}
+.question-example{display:flex;align-items:center;gap:30px;padding:19px 0 0}
+.question-label{font-size:11px;font-weight:bold;flex-shrink:0}
+.question-example p{font-size:12px;line-height:1.9;margin:0}
+.support-note{font-size:10px!important;margin:16px 0 0}
+@media(max-width:960px){.support-card{padding:20px 16px}.support-card h3{font-size:16px}.support-heading h2{font-size:27px}.support-situation{font-size:9px}}
+@media(max-width:720px){.support-panel{margin-top:32px;padding-top:30px}.support-heading{display:block;margin-bottom:22px}.support-heading h2{font-size:25px}.support-heading>p{font-size:12px;margin-top:17px}.support-heading>p br{display:none}.support-grid{grid-template-columns:1fr;gap:12px}.support-card{padding:22px}.support-icon{float:right;margin:0 0 12px 15px;width:34px;height:34px;font-size:23px}.support-situation{font-size:10px}.support-card h3{font-size:18px}.support-card p{clear:both}.support-detail{margin-top:15px}.question-example{display:block;padding-top:20px}.question-example p{margin-top:8px}.support-note{font-size:9px!important}.support-jump{font-size:10px}}
