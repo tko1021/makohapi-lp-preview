@@ -22,18 +22,29 @@ https://tko1021.github.io/makohapi-lp-preview/ に反映されます。
 
 ## 直し方（スマホのClaudeアプリから頼まれたとき、この順番で）
 
+**既定は「プレビューまで」。公開（main への反映）は、本人が「公開して」と言ったときだけ。**
+（2026-10-15 本人決定「反映までいかなくても、確認とプレビューできればいい」）
+
 1. 頼まれた箇所だけを `index.html`（または `design.css`）で直す。頼まれていない箇所は触らない。
 2. `python3 check.py` を走らせる。**CHECK PASSED でなければ push しない。** NG の行をそのまま本人に見せる。
 3. 変えた箇所を「変更前 → 変更後」で本人に見せる（長い説明は要らない。文言の差分だけ）。
-4. `main` に直接 commit して push する（ブランチもPRも作らない。本人が1人で直すページなので、
-   PRを挟むとスマホから反映できない）：
+4. **作業用ブランチ**に commit して push する（main には push しない）：
    ```bash
    git add index.html design.css
    git commit -m "lp: <何を変えたか一言>"
+   git push -u origin HEAD
+   ```
+5. push したコミット番号でプレビューURLを作り、**押せるリンクとして**本人に渡す：
+   ```bash
+   echo "https://htmlpreview.github.io/?https://github.com/tko1021/makohapi-lp-preview/blob/$(git rev-parse HEAD)/index.html"
+   ```
+   ブランチ名ではなくコミット番号を使う（キャッシュで古い版が出るのと、ブランチ名の「/」で壊れるのを防ぐ）。
+   「このリンクをスマホで開くと、公開前の見た目を確認できます。公開してよければ『公開して』と送ってください」と添える。
+6. 本人が「公開して」と言ったときだけ、同じ内容を main へ push する：
+   ```bash
    git push origin HEAD:main
    ```
-5. push 後に「約1〜2分で https://tko1021.github.io/makohapi-lp-preview/ に反映されます。
-   スマホで開いて確認してください」と伝える。
+   push 後に「約1〜2分で https://tko1021.github.io/makohapi-lp-preview/ に反映されます」と伝える。
 
 ## 守ること（check.py が機械で止めるもの）
 
