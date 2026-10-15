@@ -26,6 +26,7 @@ body{font-size:16px;line-height:1.78;overflow-x:hidden}
 .time-band h2{font-size:43px}.time-number b{font-size:66px}
 .cases-grid h3{font-size:16px}.cases-grid article{min-height:195px}
 .support h2{font-size:clamp(38px,4.25vw,64px);line-height:1.08}
+.support h2 span{display:block}
 .support-list h3{font-size:18px}.support-list p{font-size:14px}
 .price-side .price{font-size:64px}
 .faq summary{font-size:16px}.faq details p{font-size:14px;line-height:1.9}
@@ -43,6 +44,8 @@ body{font-size:16px;line-height:1.78;overflow-x:hidden}
   .vision-statement{font-size:22px}
   .goal-grid h3,.months h3{font-size:21px}
   .time-band h2{font-size:35px}.time-number b{font-size:56px}
+  .support h2{font-size:clamp(22px,7vw,35px);letter-spacing:-.05em}
+  .support h2 span{white-space:nowrap}
   .price-side .price{font-size:49px}
   .faq summary{font-size:15px}
   .cube-stage{width:100%;overflow:hidden}
