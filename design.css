@@ -16,6 +16,7 @@ body{font-size:16px;line-height:1.78;overflow-x:hidden}
 .vision h2,.purpose h2{font-size:clamp(42px,4.7vw,72px);line-height:1.02}
 .section-title-row h2,.instructor h2,.requirements h2,.faq h2,.final-cta h2{font-size:clamp(38px,4.25vw,66px);line-height:1.06}
 .section-title-row>p{font-size:21px;line-height:1.65}
+.cases-title span{display:block}
 .pain .lead{font-size:18px;line-height:1.85}
 .arrow-list li{font-size:15px;line-height:1.75}
 .vision-statement{font-size:27px;line-height:1.65}
@@ -39,6 +40,8 @@ body{font-size:16px;line-height:1.78;overflow-x:hidden}
   .hero-copy>p{font-size:14px;line-height:1.85}
   .dark-section,.violet-section,.white-section,.time-band{padding-top:62px;padding-bottom:62px}
   .pain h2,.vision h2,.purpose h2,.section-title-row h2,.instructor h2,.requirements h2,.faq h2,.final-cta h2{font-size:35px;line-height:1.1;letter-spacing:-.04em}
+  .section-title-row .cases-title{font-size:clamp(25px,7.5vw,35px);letter-spacing:-.05em}
+  .cases-title span{white-space:nowrap}
   .pain .lead,.vision-copy,.section-title-row>p{font-size:16px}
   .arrow-list li{font-size:14px}
   .vision-statement{font-size:22px}
