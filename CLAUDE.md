@@ -11,8 +11,13 @@ https://tko1021.github.io/makohapi-lp-preview/ に反映されます。
 
 | ファイル | 役割 |
 |---|---|
-| `index.html` | LP本体（1枚）。文言・構成はここ |
+| `index.html` | 短縮LP |
+| `complete.html` | 講座の完全版 |
 | `design.css` | 見た目（色・余白・フォント） |
+| `tokushoho.html` / `privacy.html` / `terms.html` | 法務表示の確認用原稿 |
+| `gaiyo_shomen.html` / `contract_sample.html` | 法定書面の確認用原稿・見本 |
+| `application-flow.html` | 申込準備の流れと未完了項目 |
+| `measurement.js` | 外部送信なしの計測イベント準備 |
 | `check.py` | 公開前の機械検査（下記）。標準ライブラリだけで動く |
 | `.nojekyll` | GitHub Pages にそのまま配信させる印。消さない |
 
@@ -49,7 +54,7 @@ https://tko1021.github.io/makohapi-lp-preview/ に反映されます。
 ## 守ること（check.py が機械で止めるもの）
 
 - **入力欄（input/textarea/select/iframe）を置かない**。このページは個人情報を受け取らない。
-- **外部リンクを足さない**。リンクはページ内（`#…`）と `design.css` だけ。
+- **外部リンクを足さない**。リンクはページ内と、このリポジトリ内の確認用ページだけ。
   外部リンク（申込フォーム・LINE・決済など）を足すのは、本人が「正式募集に切り替える」と決めたとき。
   そのときは check.py の条件も一緒に本人決定として変える。
 - `<meta name="robots" content="noindex,nofollow">` を消さない。
