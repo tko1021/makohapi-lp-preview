@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent
 LP_FILES = (ROOT / "index.html", ROOT / "complete.html")
 LEGAL_FILES = tuple(ROOT / name for name in (
     "tokushoho.html", "privacy.html", "terms.html", "gaiyo_shomen.html",
-    "contract_sample.html", "application-flow.html",
+    "contract_sample.html", "application-flow.html", "monitor_consent.html",
 ))
 HTML_FILES = LP_FILES + LEGAL_FILES
 CSS = ROOT / "design.css"
@@ -53,6 +53,9 @@ def main() -> int:
         ng.append("design.css が無い")
     sizes = []
     allowed_files = {path.name for path in HTML_FILES} | {"design.css", "measurement.js"}
+    actual_files = {path.name for path in ROOT.glob("*.html")}
+    if actual_files != {path.name for path in HTML_FILES}:
+        ng.append(f"HTMLの検査対象に過不足がある: {sorted(actual_files ^ {path.name for path in HTML_FILES})}")
     for html_path in HTML_FILES:
         if not html_path.exists():
             ng.append(f"{html_path.name} が無い")
@@ -78,6 +81,12 @@ def main() -> int:
             ng.append(f"{html_path.name}: h1 が {au.h1} 個（1個のはず）")
         if "design.css" not in [link for link, _ in au.links]:
             ng.append(f"{html_path.name}: design.css が参照されていない")
+        if html_path.name in ("index.html", "complete.html", "privacy.html", "terms.html", "gaiyo_shomen.html", "application-flow.html") and "monitor_consent.html" not in [link for link, _ in au.links]:
+            ng.append(f"{html_path.name}: 事例掲載同意書への導線が無い")
+        if html_path.name in ("index.html", "complete.html", "tokushoho.html", "terms.html", "application-flow.html") and "2026年10月28日（水）20:00" not in html:
+            ng.append(f"{html_path.name}: 決定済みの無料説明会日時が無い")
+        if html_path.name == "application-flow.html" and "申込期限の日時は2026年10月26日（月）23:59" not in html:
+            ng.append("application-flow.html: 決定済みの申込期限日時が無い")
 
     corpus = "\n".join(path.read_text(encoding="utf-8-sig") for path in HTML_FILES if path.exists())
     required = {
@@ -86,6 +95,7 @@ def main() -> int:
         "終了日2027年2月18日": "2027年2月18日",
         "全12回": "全12回",
         "原則木曜20:00～21:30": "原則木曜20:00～21:30",
+        "無料説明会2026年10月28日20時": "2026年10月28日（水）20:00",
         "開講後の参加者アンケート": "開講後に参加者アンケート",
         "祝日開催可": "祝日開催",
         "個別添削12回": "個別添削12回",
@@ -98,12 +108,14 @@ def main() -> int:
         if text not in corpus:
             ng.append(f"必須表示が無い: {label}")
     forbidden = (
-        "100,000円", "2026年11月1日", "2026年10月28日", "2026年10月23日",
+        "100,000円", "2026年11月1日", "2026年10月23日",
         "先着10名", "第1期", "ライブ講義の曜日・時刻、終了日、申込期限",
         "ライブ講義の曜日・時刻、申込期限", "確定日程と終了日は概要書面に記載",
         "終了日と全12回の日程は確定版に記載",
         "12月24日・31日は休講", "2月11日分は2月10日（水）20:00へ振替",
         "講義日時と終了日は確定しました", "現行日程案は参加者アンケート後に最終確定",
+        "D 本人の追加決定が必要：申込期限", "申込期限を決定し、", "申込期限の決定と",
+        "申込期限の確定と、", "説明会日時と申込期限の決定", "説明会日時、申込期限、",
     )
     for text in forbidden:
         if text in corpus:
