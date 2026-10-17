@@ -111,3 +111,5 @@ body{font-size:16px;line-height:1.78;overflow-x:hidden}
   .idea-grid,.entry-paths,.price-cards{grid-template-columns:1fr}.before-after article{grid-template-columns:1fr;gap:5px}.before-after article p{margin-bottom:12px}
   .audience-grid{gap:55px}.included-grid{grid-column:auto}.price-cards article{padding:22px}.price-cards b{font-size:24px}
 }
+
+.fast-track>div{min-width:0;flex:1}.fast-track>div p+p{margin-top:12px}
