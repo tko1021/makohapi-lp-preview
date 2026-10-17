@@ -25,6 +25,8 @@ LEGAL_FILES = tuple(ROOT / name for name in (
 ))
 HTML_FILES = LP_FILES + LEGAL_FILES
 CSS = ROOT / "design.css"
+BRIEFING_PAGES = {"index.html", "complete.html", "tokushoho.html", "terms.html", "gaiyo_shomen.html", "application-flow.html"}
+BRIEFING_DEADLINE = "無料説明会の申込締切：2026年10月26日（月）23:59"
 
 
 class Audit(HTMLParser):
@@ -83,10 +85,10 @@ def main() -> int:
             ng.append(f"{html_path.name}: design.css が参照されていない")
         if html_path.name in ("index.html", "complete.html", "privacy.html", "terms.html", "gaiyo_shomen.html", "application-flow.html") and "monitor_consent.html" not in [link for link, _ in au.links]:
             ng.append(f"{html_path.name}: 事例掲載同意書への導線が無い")
-        if html_path.name in ("index.html", "complete.html", "tokushoho.html", "terms.html", "application-flow.html") and "2026年10月28日（水）20:00" not in html:
+        if html_path.name in BRIEFING_PAGES and "2026年10月28日（水）20:00" not in html:
             ng.append(f"{html_path.name}: 決定済みの無料説明会日時が無い")
-        if html_path.name == "application-flow.html" and "申込期限の日時は2026年10月26日（月）23:59" not in html:
-            ng.append("application-flow.html: 決定済みの申込期限日時が無い")
+        if html_path.name in BRIEFING_PAGES and BRIEFING_DEADLINE not in html:
+            ng.append(f"{html_path.name}: 決定済みの無料説明会申込締切が無い")
 
     corpus = "\n".join(path.read_text(encoding="utf-8-sig") for path in HTML_FILES if path.exists())
     required = {
@@ -116,6 +118,8 @@ def main() -> int:
         "講義日時と終了日は確定しました", "現行日程案は参加者アンケート後に最終確定",
         "D 本人の追加決定が必要：申込期限", "申込期限を決定し、", "申込期限の決定と",
         "申込期限の確定と、", "説明会日時と申込期限の決定", "説明会日時、申込期限、",
+        "締切対象が、説明会申込か受講申込か", "締切対象の確認と", "締切の対象手続を確認し、",
+        "受講申込締切：2026年10月26日", "受講申込期限：2026年10月26日",
     )
     for text in forbidden:
         if text in corpus:
