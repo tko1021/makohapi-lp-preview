@@ -1,0 +1,93 @@
+{
+  "status": "draft_not_connected",
+  "provenance": "【私が決めた】接続担当が使う準備用の構成。本人の決定値は各sourceに明記。個人データ・認証値は入れない。",
+  "source_checked_on": "2026-10-17",
+  "briefing": {
+    "source": "【既存から取った】引継ぎ正本と本人回答『説明会締め切り』",
+    "name": "まこハピAIスクール 無料説明会",
+    "starts_at": "2026-10-28T20:00:00+09:00",
+    "application_deadline_display": "2026年10月26日（月）23:59",
+    "form_url": null,
+    "success_url": null,
+    "meeting_url": null,
+    "fields_proposal": [
+      {"id": "name", "label": "お名前", "required": true, "default": null},
+      {"id": "email", "label": "メールアドレス", "required": true, "default": null},
+      {"id": "privacy_consent", "label": "個人情報の取扱いを確認し、説明会の受付・案内に利用することに同意します", "required": true, "default": null}
+    ],
+    "registration_effect": "無料説明会の参加申込み。受講契約・有料申込・支払義務は発生しない。",
+    "confirmation_mail_proposal": {
+      "subject": "無料説明会のお申込みを受け付けました｜まこハピAIスクール",
+      "body": "{name} 様\nまこハピAIスクールの無料説明会へお申し込みいただき、ありがとうございます。\n開催日時：2026年10月28日（水）20:00\n参加用URL：{meeting_url}\nこの申込みは無料説明会の参加申込みです。受講契約や支払義務は発生しません。\n説明会当日は、講座の進め方と注意事項をご案内します。無料の自己準備資料もご案内します。\n株式会社ドリームクエスト",
+      "do_not_send_until": ["実登録が成功したことを確認", "meeting_urlに実際の開催URLを設定", "送信先と差出人をテスト", "未置換の変数が無いことを確認"]
+    }
+  },
+  "course": {
+    "source": "【既存から取った】現行LP・完全版・引継ぎ正本",
+    "name": "まこハピAIスクール 第0期モニター",
+    "total_price_yen_including_tax": 110000,
+    "starts_on": "2026-11-19",
+    "ends_on": "2027-02-18",
+    "lectures": 12,
+    "maximum_students": 10,
+    "application_deadline": null,
+    "payment_deadline": null,
+    "form_url": null,
+    "payment_url": null,
+    "payment_method_confirmed_for_actual_product": null,
+    "known_payment_method_difference": "公開LP等4箇所はカードまたは銀行振込。旧ai-school/07_概要書面_契約書面_受講規約_案.mdはカード一括（申込時）。実商品へ接続する前に差分を確定する。",
+    "do_not_reuse_briefing_deadline": true
+  },
+  "electronic_delivery": {
+    "status": "design_only_no_consents_collected",
+    "official_source": "https://www.no-trouble.caa.go.jp/pdf/20240208la02_04.pdf",
+    "official_listing": "https://www.no-trouble.caa.go.jp/law/",
+    "listing_version_note": "公式一覧：ガイドライン等は令和6年11月19日付け、別添4は令和6年5月16日別紙追加と表示。2026年10月17日取得。",
+    "separate_document_types": ["概要書面", "契約書面"],
+    "proposed_method": "メールにPDFを添付。実際に使用する記録方式・閲覧環境と検証用ファイルを接続時に確定する。",
+    "format_version": null,
+    "sample_file_url": null,
+    "consent_record_proposal": {
+      "document_type": null,
+      "document_version": null,
+      "explained_method_and_format": null,
+      "typed_full_name": null,
+      "typed_understanding_statement": null,
+      "paper_or_electronic_choice": null,
+      "device_and_email_used_daily_confirmed": null,
+      "device_operation_confirmed": null,
+      "supported_os_and_browser_confirmed": null,
+      "third_party_copy_requested": null,
+      "consent_timestamp": null,
+      "consent_receipt_delivery_method": null,
+      "consent_receipt_delivered_at": null,
+      "document_sent_at": null,
+      "document_file_sha256": null,
+      "saved_by_recipient_confirmed_at": null,
+      "readable_by_recipient_confirmed_at": null
+    },
+    "explanation_draft": [
+      "概要書面と契約書面は、講座の内容や支払い・解約について記載した重要な書面です。",
+      "電子交付を選ぶ場合は、ご自身のメールでPDFファイルを受け取り、ご自身の端末等に保存して、後から読めるようにしてください。実際に使うファイル形式と閲覧方法は承諾前に案内します。",
+      "電子交付に承諾する義務はありません。紙での交付を希望する場合の手続も案内します。紙の選択を理由とする追加費用や不利益は設けません。",
+      "日常的に使用する4.5インチ以上の画面の端末とメールで、ご自身が受信・保存・閲覧の操作をできるか確認します。端末のOSやブラウザがサポート中かも確認します。",
+      "ご希望があれば、あらかじめ指定した方にも同じ書面をメールで送る方法を案内します。",
+      "概要書面と契約書面の承諾・交付記録を分けます。契約書面については、有効に交付された書面を受け取った日を含め8日以内のクーリング・オフについて説明します。",
+      "上記の説明を理解した内容とお名前をご自身で入力してください。チェック欄だけで電子交付の承諾を済ませる設計にはしません。"
+    ],
+    "integration_checks": [
+      "概要書面と契約書面それぞれについて、説明・操作確認・氏名と理解した旨の記入・承諾の記録を行う。",
+      "承諾を証する書面の交付方法を確定する。オンライン完結取引等の例外の適用を確認せず、全て電子でよいとしない。",
+      "受信者が保存できるPDFを交付し、送付した版と改変の有無を確認できる記録を残す。",
+      "受信者自身が保存できたことと、内容を読めることを別々に確認する。送信成功だけで到達確認済みにしない。",
+      "未承諾・紙希望・送信失敗・閲覧不能・希望する第三者への同時送信の各分岐を通し試験する。",
+      "氏名・メール・契約固有情報の実値はこの公開リポジトリへ保存しない。保存場所と閲覧権限を接続先で確定する。"
+    ]
+  },
+  "measurement": {
+    "existing": ["page_view_ready", "cta_click"],
+    "production_destination": null,
+    "planned_events": ["briefing_registration_completed", "course_application_completed", "payment_completed"],
+    "rule": "成功が確認された段階だけで発火。ボタンクリックを登録・決済完了としない。氏名・メールは解析イベントへ送らない。"
+  }
+}
