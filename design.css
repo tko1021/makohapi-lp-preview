@@ -113,3 +113,9 @@ body{font-size:16px;line-height:1.78;overflow-x:hidden}
 }
 
 .fast-track>div{min-width:0;flex:1}.fast-track>div p+p{margin-top:12px}
+
+/* Physical AI outlook: an invitation before the final course entry. */
+.physical-vision{padding:100px 28px;background:#f3f0e7;color:#263d2e}.physical-vision .vision-reading{max-width:790px;margin:0 auto}.physical-vision .vision-label{font-size:13px;letter-spacing:.12em;color:#627253;margin:0 0 18px}.physical-vision h2{font-size:clamp(29px,3.5vw,44px);line-height:1.65;letter-spacing:.01em;margin:0 0 34px}.physical-vision p{font-size:16px;font-weight:400;line-height:2.15;margin:0 0 24px}.physical-vision .vision-threshold{font-weight:600;border-left:3px solid #8b9c6d;padding-left:22px;margin:34px 0}.physical-vision .vision-invitation{font-size:clamp(23px,2.6vw,32px);font-weight:600;line-height:1.8;margin:42px 0 0;letter-spacing:.01em}
+@media(max-width:600px){.physical-vision{padding:64px 22px}.physical-vision h2{margin-bottom:27px}.physical-vision p{font-size:15px;line-height:2.1}.physical-vision .vision-threshold{padding-left:16px}.physical-vision .vision-invitation{font-size:23px;margin-top:32px}}
+
+.physical-vision h2 span,.physical-vision .vision-invitation span{display:inline-block}
