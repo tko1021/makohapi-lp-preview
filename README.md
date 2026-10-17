@@ -17,6 +17,8 @@
 - `application-flow.html`：申込・書面交付・決済の準備状況
 - `monitor_consent.html`：事例掲載同意書（確認用案・送信不可）
 - `measurement.js`：外部送信を行わない計測イベントの準備コード
+- `tools/refund_check.py`：解約時の上限額の検算用。実返金・法適用判定には未接続
+- `tests/test_refund_check.py`：架空の金額による検算（`python -m unittest discover -s tests`）
 
 無料説明会は2026年10月28日（水）20:00、講座は2026年11月19日～2027年2月18日、全12回です。
 無料説明会の申込締切：2026年10月26日（月）23:59（2026年10月17日本人回答）。
