@@ -34,7 +34,7 @@
     "payment_deadline": null,
     "form_url": null,
     "payment_url": null,
-    "payment_method_confirmed_for_actual_product": null,
+    "payment_method_confirmed_for_actual_product": "クレジットカードまたは銀行振込（一括払い）。決済システムはUTAGE。【本人決定】2026-10-18",
     "known_payment_method_difference": "公開LP等4箇所はカードまたは銀行振込。旧ai-school/07_概要書面_契約書面_受講規約_案.mdはカード一括（申込時）。実商品へ接続する前に差分を確定する。",
     "do_not_reuse_briefing_deadline": true
   },
