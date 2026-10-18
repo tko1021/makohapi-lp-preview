@@ -26,7 +26,7 @@ LEGAL_FILES = tuple(ROOT / name for name in (
 HTML_FILES = LP_FILES + LEGAL_FILES
 CSS = ROOT / "design.css"
 BRIEFING_PAGES = {"index.html", "complete.html", "tokushoho.html", "terms.html", "gaiyo_shomen.html", "application-flow.html"}
-BRIEFING_DEADLINE = "無料説明会の申込締切：2026年10月26日（月）23:59"
+BRIEFING_DEADLINE = "無料説明会の申込締切：2026年10月26日（月）23:00"
 
 
 class Audit(HTMLParser):
