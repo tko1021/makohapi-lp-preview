@@ -7,7 +7,11 @@
     "name": "まこハピAIスクール 無料説明会",
     "starts_at": "2026-10-28T20:00:00+09:00",
     "application_deadline_display": "2026年10月26日（月）23:59",
-    "form_url": null,
+    "utage_event_id": "9R0zridaQybV",
+  "utage_schedule_id": "JM34E3ORaJUu",
+  "utage_status": "【実測】2026-10-18 13:50 UTAGEに非公開(管理名【下書き・未公開】)で作成。日程 2026-10-28 20:00-21:00・オンライン・Zoom URL登録済み。申込URLとZoom URLは公開リポジトリに書かない(UTAGE管理画面のevent_getで取得)",
+  "zoom_note": "【本人作成】Zoom予約済み(自動生成ID・待機室ON)。参加URLはUTAGEの日程にのみ保存",
+  "form_url": null,
     "success_url": null,
     "meeting_url": null,
     "fields_proposal": [
