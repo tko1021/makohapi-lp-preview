@@ -1,4 +1,4 @@
-# まこハピAIスクール LP
+# まこハピAIバイブコーディングschool LP
 
 公開ページ：https://tko1021.github.io/makohapi-lp-preview/
 

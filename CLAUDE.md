@@ -1,6 +1,6 @@
-# まこハピAIスクール LP（公開ページの正本）
+# まこハピAIバイブコーディングschool LP（公開ページの正本）
 
-このリポジトリは **まこハピAIスクールのLP（ランディングページ）そのもの**です。
+このリポジトリは **まこハピAIバイブコーディングschoolのLP（ランディングページ）そのもの**です。
 `main` に push すると GitHub Pages が自動で更新され、約1〜2分で
 https://tko1021.github.io/makohapi-lp-preview/ に反映されます。
 
